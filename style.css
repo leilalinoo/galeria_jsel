@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 10px;
+    padding: 0%;
+}
+
+main{
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    gap: 3px;
+}
+section > button, .nagykep{
+    border: 1px solid black;
+}
+
+
+.kepek{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.kepek div{
+    border: 1px solid black;
+    flex: 0 0 calc(33%);
+}
+img{
+    width: 100%;
+}
+
