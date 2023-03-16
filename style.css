@@ -1,40 +1,56 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    margin: 10px;
-    padding: 0%;
-}
-
-main{
-    width: 80%;
-    max-width: 800px;
-    margin: auto;
+body {
+  margin: 10px;
+  padding: 0%;
+  background-image: url("kepek/hatter.jpg");
+  background-attachment: fixed;
 }
 
-section{
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    gap: 3px;
-}
-section > button, .nagykep{
-    border: 1px solid black;
+main {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  background-color: aliceblue;
 }
 
-
-.kepek{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
+section {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 3px;
 }
-.kepek div{
-    border: 1px solid black;
-    flex: 0 0 calc(33%);
-}
-img{
-    width: 100%;
+section > button,
+#nagykep {
+  border: 1px solid black;
 }
 
+.kepek {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+.kepek div {
+  border: 1px solid black;
+  flex: 0 0 calc(25% - 3px);
+}
+img {
+  width: 100%;
+}
+
+@media screen and (max-width:700px){
+  section{ 
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  .kepek{
+    justify-content: center;
+
+  }
+  .kepek div{
+    flex: 0 0 calc(70% - 3px);
+    justify-content: center;
+  }
+}

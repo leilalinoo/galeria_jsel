@@ -18,6 +18,61 @@ window.addEventListener("load", function () {
       NAGYKEP[0].src = LIST[index];
     });
   }
+
+
+
+  let SZAMLALO = 0;
+  const JOBBGOMB = document.getElementById("#jobb");
+  const BALGOMB = document.getElementById("#bal");
+  NAGYKEP = document.getElementById("#nagykep img");
+
+  JOBBGOMB.addEventListener("click", function () {
+    SZAMLALO = (SZAMLALO + 1) % LIST.length;
+    NAGYKEP.src = LIST[SZAMLALO];
+    if (SZAMLALO >= LIST.length) {
+      NAGYKEP[0].src = LIST[0];
+      SZAMLALO = 0;
+    }
+    SZAMLALO += 1;
+  });
+
+  BALGOMB[0].addEventListener("click", function () {
+    SZAMLALO = (SZAMLALO - 1 + LIST.length) % LIST.length;
+    NAGYKEP[0].src = LIST[SZAMLALO];
+    if (SZAMLALO >= LIST.length) {
+      NAGYKEP[0].src = LIST[0];
+      SZAMLALO = 0;
+    }
+    SZAMLALO -= 1;
+  });
+
+  /*const JOBBGOMB = document.querySelectorAll(".jobb");
+  JOBBGOMB[0].addEventListener("click", function () {
+    const FOKEP = document.querySelectorAll(".nagykep img");
+    FOKEP[0].style.width = "100%";
+    let SZAMLALO = 0;
+
+    FOKEP[0].src = LIST[SZAMLALO];
+    if (SZAMLALO >= LIST.length) {
+      FOKEP[0].src = LIST[0];
+      SZAMLALO = 0;
+    }
+    SZAMLALO += 1;
+  });
+
+  const BALGOMB = document.querySelectorAll(".bal");
+  BALGOMB[0].addEventListener("click", function () {
+    const FOKEP = document.querySelectorAll(".nagykep img");
+    FOKEP[0].style.width = "100%";
+    let SZAMLALO = 0;
+
+    FOKEP[0].src = LIST[SZAMLALO];
+    if (SZAMLALO >= LIST.length) {
+      FOKEP[0].src = LIST[0];
+      SZAMLALO = 0;
+    }
+    SZAMLALO += 1;
+  });*/
 });
 
 function feltoltes(SZULOELEM) {
